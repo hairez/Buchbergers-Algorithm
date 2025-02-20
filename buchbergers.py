@@ -6,11 +6,11 @@ eps = 1e-9
 def termorder1(x,l = 1):
     # \prec_\ell as defined in the problem
     # tiebreak by graded reverse lexicographic term order
-    return (sum(x[:l]), sum(x[:-1]),x[:-1])
+    return (sum(x[:l]), sum(x[:-1]),[-elem for elem in x[:-1][::-1]])
 
 def termorder2(x):
     #lexicographic term order
-    return (x[:-1][::-1])
+    return (x[:-1])
 
 def LT(f,termorder):
     f.sort(key=termorder)
